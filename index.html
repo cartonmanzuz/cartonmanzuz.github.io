@@ -15,7 +15,7 @@
 
 function weAreSimilar(){
 
-	
+
 	
 	/*
 	function faveGetPosts(ajData){
@@ -101,7 +101,10 @@ function weAreSimilar(){
 	}
 	*/
 
-
+	VK.api("wall.post", {"message": "Hello!"}, function (data) {
+		alert("Post ID:" + data.response.post_id); 
+	});
+	
 	var i = 0, response = [], usersMas;
 	//faveGetPosts();
 }
