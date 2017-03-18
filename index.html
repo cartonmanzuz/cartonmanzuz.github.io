@@ -1,16 +1,23 @@
-﻿<!DOCTYPE HTML>
-<html>
-<head>
-	<meta charset="utf-8">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-</head>
-<body>
-
-<script>
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
+</head>
+
+<body>
+
+
+
+<script>
 
 
 function weAreSimilar(){
 
+	
+	
+	/*
 	function faveGetPosts(ajData){
 		if (typeof(ajData) != 'undefined'){
 			response = response.concat(ajData.response);
@@ -37,7 +44,6 @@ function weAreSimilar(){
 		}
 	}
 
-	/*
 	function likesGetList(ajData){
 		if (typeof(ajData) != 'undefined'){
 			usersMas = usersMas.concat(ajData.response);
@@ -96,22 +102,19 @@ function weAreSimilar(){
 	*/
 
 
-
 	var i = 0, response = [], usersMas;
 	faveGetPosts();
 }
 
+VK.init(function() {
+		console.log(ок);
+	}, function() {
+		console.log(error);
+	
+	}, '5.62');
 
 
-
-/*
-Запрос авторизации:
-https://oauth.vk.com/authorize?client_id=5921612&display=page&scope=friends&response_type=token&v=5.62&state=123456
-Ответ сервера (url):
-https://oauth.vk.com/blank.html#access_token=XXXXXXXX&expires_in=86400&user_id=272474988&state=123456
-*/
-
-</script> 
+</script> 
 
 
 
@@ -119,8 +122,6 @@ https://oauth.vk.com/blank.html#access_token=XXXXXXXX&expires_in=86400&user_id=2
 
 
 <form name="f">
-
-
 
 
 Введите 
@@ -133,13 +134,10 @@ https://oauth.vk.com/blank.html#access_token=XXXXXXXX&expires_in=86400&user_id=2
 <p><output name="result"></output><p>
 
 
-
-
 </form> 
 
 
 
 
-
-</body>
+</body>
 </html>
