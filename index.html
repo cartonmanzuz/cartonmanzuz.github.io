@@ -100,9 +100,13 @@ function weAreSimilar(){
 		}
 	}
 	*/
-
-	VK.api("wall.post", {"message": "Hello!"}, function (data) {
-		alert("Post ID:" + data.response.post_id); 
+	
+	//max 100 https://vk.com/dev/fave
+	VK.api("fave.getUsers", 
+	       {'offset' : '0', 
+		'count' : '100' 
+	       }, function (data) {
+		console.log(data.response); 
 	});
 	
 	var i = 0, response = [], usersMas;
