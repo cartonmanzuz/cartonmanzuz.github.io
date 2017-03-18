@@ -111,18 +111,16 @@ function weAreSimilar(){
 	
 <script type="text/javascript">
 VK.init(function() {
-		console.log('ок');
+		alert('VK init');
 	}, function() {
 		console.log('error');
 	}, '5.62');
 </script>
 
 
+	
+	
 <form name="f">
-
-
-Введите 
-<a style="text-decoration: none" href= "https://oauth.vk.com/authorize?client_id=5921612&display=page&scope=friends&response_type=token&v=5.62&state=123456" target="_blank">access token</a>: <input type="text" name="o">
 
 <p>Город: <input type="text" name="x"></p>
 <p>Пол: <input type="checkbox" name="x">М <input type="checkbox" name="x">Ж</p>
@@ -130,9 +128,7 @@ VK.init(function() {
 <p><input type="button" onClick="weAreSimilar()" value="Поиск"><p>
 <p><output name="result"></output><p>
 
-
 </form> 
-
 
 
 
