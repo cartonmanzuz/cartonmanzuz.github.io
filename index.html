@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
 </head>
 
@@ -16,8 +17,6 @@
 function weAreSimilar(){
 
 
-	
-	/*
 	function faveGetPosts(ajData){
 		if (typeof(ajData) != 'undefined'){
 			response = response.concat(ajData.response);
@@ -43,7 +42,8 @@ function weAreSimilar(){
 			likesGetList();
 		}
 	}
-
+	
+	/*
 	function likesGetList(ajData){
 		if (typeof(ajData) != 'undefined'){
 			usersMas = usersMas.concat(ajData.response);
@@ -110,7 +110,7 @@ function weAreSimilar(){
 	});
 	
 	var i = 0, response = [], usersMas;
-	//faveGetPosts();
+	faveGetPosts();
 }
 
 </script> 
@@ -128,7 +128,7 @@ VK.init(function() {
 	
 	
 <form name="f">
-
+<a style="text-decoration: none" href= "https://oauth.vk.com/authorize?client_id=5921612&display=page&scope=friends&response_type=token&v=5.62&state=123456" target="_blank">access token</a>: <input type="text" name="o">
 <p>Город: <input type="text" name="x"></p>
 <p>Пол: <input type="checkbox" name="x">М <input type="checkbox" name="x">Ж</p>
 <p>Возраст: <input type="text" name="x"></p>
