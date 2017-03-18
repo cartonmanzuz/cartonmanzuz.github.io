@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -99,7 +99,7 @@ function weAreSimilar(){
 			console.log(usersMas);
 		}
 	}
-	*/
+
 	
 	//max 100 https://vk.com/dev/fave
 	VK.api("fave.getUsers", 
@@ -108,6 +108,7 @@ function weAreSimilar(){
 	       }, function (data) {
 		console.log(data.response); 
 	});
+		*/
 	
 	var i = 0, response = [], usersMas;
 	faveGetPosts();
@@ -117,11 +118,12 @@ function weAreSimilar(){
 
 	
 <script type="text/javascript">
+/*	
 VK.init(function() {
 		alert('VK init');
 	}, function() {
 		console.log('error');
-	}, '5.62');
+	}, '5.62');		*/
 </script>
 
 
