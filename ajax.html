@@ -1,0 +1,146 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+
+
+function weAreSimilar(){
+
+	function faveGetPosts(ajData){
+		if (typeof(ajData) != 'undefined'){
+			response = response.concat(ajData.response);
+		}
+
+		if (i<=5) jQuery.ajax({
+			  url: 'https://api.vk.com/method/fave.getPosts?',
+			  data:{
+				  offset: 100*i,
+				  count: 100, //max 100 https://vk.com/dev/fave
+				  access_token: document.f.o.value
+			  },
+			  type: 'GET',
+			  dataType: 'jsonp',
+			  success: function(data) {
+				console.log(data);
+				i++;
+				faveGetPosts(data);
+			  }
+		});
+		else {
+			console.log(response);
+			likesGetList();
+		}
+	}
+
+	/*
+	function likesGetList(ajData){
+		if (typeof(ajData) != 'undefined'){
+			usersMas = usersMas.concat(ajData.response);
+		}
+
+		if (i<=5) jQuery.ajax({
+			  url: 'https://api.vk.com/method/likes.getList?',
+			  data:{
+				type: "post", 
+				owner_id: "272474988", 
+				item_id: "429",
+				offset: 100*i,
+				count: 1000 //max 1000 https://vk.com/dev/likes.getList
+			  },
+			  type: 'GET',
+			  dataType: 'jsonp',
+			  success: function(data) {
+				console.log(data);
+				i++;
+				likesGetList(data);
+			  }
+		});
+		else {
+			console.log(usersMas);
+			usersGet();
+		}
+	}
+	*/
+
+
+	/*
+	function usersGet(ajData){
+		if (typeof(ajData) != 'undefined'){
+			usersMas = usersMas.concat(ajData.response);
+		}
+
+		if (i<=5) jQuery.ajax({
+			  url: 'https://api.vk.com/method/users.get?',
+			  data:{
+				fields: "",
+				user_ids: "1,2", //id пользователей. Max 1000
+						 //vk.com/dev/objects/user  vk.com/dev/users.get 
+			  }
+			  type: 'GET',
+			  dataType: 'jsonp',
+			  success: function(data) {
+				console.log(data);
+				i++;
+				usersGet(data);
+			  }
+		});
+		else {
+			console.log(usersMas);
+		}
+	}
+	*/
+
+
+
+	var i = 0, response = [], usersMas;
+	faveGetPosts();
+}
+
+
+
+
+/*
+Запрос авторизации:
+https://oauth.vk.com/authorize?client_id=5921612&display=page&scope=friends&response_type=token&v=5.62&state=123456
+Ответ сервера (url):
+https://oauth.vk.com/blank.html#access_token=XXXXXXXX&expires_in=86400&user_id=272474988&state=123456
+082b412147dedadb69d5278fff09952239d7aa664abde5dc3c06e3a210db9a0296b0fa57ca81017ba3abe
+*/
+
+</script> 
+
+
+
+
+
+
+<form name="f">
+
+
+
+
+Введите 
+<a style="text-decoration: none" href= "https://oauth.vk.com/authorize?client_id=5921612&display=page&scope=friends&response_type=token&v=5.62&state=123456" target="_blank">access token</a>: <input type="text" name="o">
+
+<p>Город: <input type="text" name="x"></p>
+<p>Пол: <input type="checkbox" name="x">М <input type="checkbox" name="x">Ж</p>
+<p>Возраст: <input type="text" name="x"></p>
+<p><input type="button" onClick="weAreSimilar()" value="Поиск"><p>
+<p><output name="result"></output><p>
+
+
+
+
+</form> 
+
+
+
+
+
+</body>
+</html>
